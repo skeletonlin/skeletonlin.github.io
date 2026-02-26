@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Work | Optimization</title>
+  <link rel="stylesheet" href="/assets/style.css"/>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <div class="brand">Work <span class="badge">Optimization</span></div>
+    <div class="nav">
+      <a href="/" data-path="/">Home</a>
+      <a href="/research/pcv/" data-path="/research/">Research</a>
+      <a href="/work/pipeline/" data-path="/work/">Work</a>
+      <a href="/notes/playbook/" data-path="/notes/">Notes</a>
+      <a href="/projects/" data-path="/projects/">Projects</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="h2">Performance Optimization (ARM NEON)</div>
+    <div class="small">Quantified improvements with profiling & controlled benchmarks.</div>
+    <div class="cn">以量測為主：可重現 benchmark、清楚前後對照。</div>
+
+    <div class="hr"></div>
+
+    <div class="kv">
+      <div class="metric"><div class="label">YOLO NMS</div><div class="value">+63%</div><div class="note">post-processing</div></div>
+      <div class="metric"><div class="label">RetinaFace decode</div><div class="value">+43%</div><div class="note">decode</div></div>
+      <div class="metric"><div class="label">warpPerspective</div><div class="value">~30%</div><div class="note">crop/warp</div></div>
+      <div class="metric"><div class="label">cosine similarity</div><div class="value">~22%</div><div class="note">feature match</div></div>
+    </div>
+
+    <div class="hr"></div>
+
+    <div class="h2">How I measure</div>
+    <ul class="list">
+      <li>Metric: latency (ms), FPS, CPU utilization</li>
+      <li>Method: fixed input set, warm-up, N runs, report mean/p95</li>
+      <li>Validation: output equivalence check (numerical tolerance)</li>
+    </ul>
+
+    <div class="hr"></div>
+
+    <div class="h2">Optimization patterns</div>
+    <ul class="list">
+      <li>Vectorization (NEON intrinsics), loop unrolling, cache-friendly layout</li>
+      <li>Memory: reduce copies, align buffers, pre-allocate</li>
+      <li>Algorithmic: early exit, pruning, thresholding strategies</li>
+    </ul>
+  </div>
+
+  <div class="footer">© <span id="y"></span> SkeletonLin</div>
+</div>
+<script src="/assets/site.js"></script>
+</body>
+</html>
