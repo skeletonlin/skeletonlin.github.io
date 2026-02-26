@@ -1,163 +1,119 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Allen Lin | AI Solution Architect</title>
-
-<style>
-body {
-    margin:0;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    background: linear-gradient(135deg,#0f172a,#0b1220);
-    color:#e2e8f0;
-}
-
-.container{
-    max-width:1100px;
-    margin:auto;
-    padding:70px 20px;
-}
-
-h1{
-    font-size:46px;
-    margin-bottom:8px;
-}
-
-.subtitle{
-    color:#94a3b8;
-    font-size:18px;
-    margin-bottom:30px;
-}
-
-.tag{
-    display:inline-block;
-    padding:6px 14px;
-    margin:6px 6px 6px 0;
-    background:#1e293b;
-    border-radius:999px;
-    font-size:14px;
-}
-
-.section{
-    margin-top:50px;
-    padding:30px;
-    background:#1e293b;
-    border-radius:14px;
-}
-
-h2{
-    margin-top:0;
-    margin-bottom:20px;
-}
-
-.metric{
-    font-size:18px;
-    margin-bottom:10px;
-}
-
-.highlight{
-    color:#60a5fa;
-    font-weight:bold;
-}
-
-a{
-    color:#60a5fa;
-    text-decoration:none;
-}
-
-a:hover{
-    text-decoration:underline;
-}
-</style>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>SkeletonLin | AI Systems / Solution Architect Track</title>
+  <link rel="stylesheet" href="/assets/style.css"/>
 </head>
-
 <body>
-<div class="container">
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">SkeletonLin <span class="badge">AI Systems</span></div>
+      <div class="nav">
+        <a href="/" data-path="/">Home</a>
+        <a href="/research/pcv/" data-path="/research/">Research</a>
+        <a href="/work/pipeline/" data-path="/work/">Work</a>
+        <a href="/notes/playbook/" data-path="/notes/">Notes</a>
+        <a href="/projects/" data-path="/projects/">Projects</a>
+      </div>
+    </div>
 
-<h1>Allen Lin</h1>
-<div class="subtitle">
-AI Solution Architect | Embedded AI Systems | Computer Vision Deployment
-</div>
+    <div class="hero">
+      <div class="card">
+        <h1 class="h1">AI Systems Engineer (Solution Architect track)</h1>
+        <p class="sub">
+          I build end-to-end embedded AI systems and translate deep learning research into production deployment:
+          <b>Algorithm</b> → <b>Deployment</b> → <b>System Integration</b> → <b>Performance</b>.
+        </p>
+        <div class="cn">我擅長把研究/模型能力落地到 SoC 量產系統：演算法 → 部署 → 系統整合 → 效能。</div>
 
-<div>
-<span class="tag">Deep Learning</span>
-<span class="tag">Segmentation / Detection</span>
-<span class="tag">Semi-Supervised Learning</span>
-<span class="tag">Embedded Linux</span>
-<span class="tag">RTOS Integration</span>
-<span class="tag">SoC SDK Customization</span>
-<span class="tag">ARM NEON Optimization</span>
-<span class="tag">C / C++</span>
-<span class="tag">Python</span>
-</div>
+        <div class="pills">
+          <span class="pill">Segmentation / Detection</span>
+          <span class="pill">Semi-supervised (Mean Teacher / VAT)</span>
+          <span class="pill">YOLO → ONNX → NPU</span>
+          <span class="pill">ARM NEON SIMD</span>
+          <span class="pill">Embedded Linux / RTOS Integration</span>
+          <span class="pill">SoC SDK Customization</span>
+        </div>
 
-<div class="section">
-<h2>Professional Summary</h2>
-<p>
-AI systems engineer bridging deep learning research and embedded deployment. 
-Strong background in segmentation, semi-supervised learning (Mean Teacher / VAT), 
-and object detection, with hands-on experience translating models into 
-production-ready embedded systems.
+        <div class="hr"></div>
 
-Experienced in Embedded Linux and RTOS-based system integration, including 
-Bootloader flashing, Kernel configuration, ISP–NPU pipeline construction, 
-and real-time MCU-driven alert control. Proven performance optimization 
-through ARM NEON SIMD acceleration with measurable improvements 
-in post-processing latency.
-</p>
-</div>
+        <div class="small">
+          Links:
+          <a href="https://github.com/skeletonlin" target="_blank" rel="noreferrer">GitHub</a>
+          · <a href="mailto:allen880928@gmail.com">Email</a>
+          <!-- 你之後可加 LinkedIn/Resume -->
+        </div>
+      </div>
 
-<div class="section">
-<h2>Technical Architecture Experience</h2>
-<ul>
-<li>Designed full AI pipeline: Camera → ISP → NPU → OSD → Alert → MCU</li>
-<li>Built YOLO → ONNX → SoC NPU deployment workflow</li>
-<li>Customized SoC SDK for ADAS, DMS, TSR, PCW, BSD applications</li>
-<li>Integrated AI inference results with real-time system control logic</li>
-</ul>
-</div>
+      <div class="card">
+        <div class="h2">Performance Evidence</div>
+        <div class="small">Measured improvements from ARM NEON / post-processing optimization.</div>
 
-<div class="section">
-<h2>Performance Optimization Highlights</h2>
+        <div class="kv">
+          <div class="metric">
+            <div class="label">YOLO NMS</div>
+            <div class="value">+63%</div>
+            <div class="note">post-processing acceleration</div>
+          </div>
+          <div class="metric">
+            <div class="label">RetinaFace decode</div>
+            <div class="value">+43%</div>
+            <div class="note">decode optimization</div>
+          </div>
+          <div class="metric">
+            <div class="label">warpPerspective (crop)</div>
+            <div class="value">~30%</div>
+            <div class="note">image warp speedup</div>
+          </div>
+          <div class="metric">
+            <div class="label">cosine similarity</div>
+            <div class="value">~22%</div>
+            <div class="note">feature matching speedup</div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-<div class="metric">
-YOLO NMS acceleration: <span class="highlight">+63%</span>
-</div>
+    <div class="grid">
+      <div class="card">
+        <div class="h2">Research</div>
+        <ul class="list">
+          <li><a href="/research/pcv/">PCV Segmentation (ARVO)</a> — semi-supervised & cross-modality design.</li>
+          <li>Model notes — supervised vs semi-supervised, experiment design (WIP).</li>
+        </ul>
+      </div>
 
-<div class="metric">
-warpPerspective (Face Crop) optimization: <span class="highlight">+30%</span>
-</div>
+      <div class="card">
+        <div class="h2">Work</div>
+        <ul class="list">
+          <li><a href="/work/pipeline/">System Pipeline</a> — Camera → ISP → NPU → OSD → Alert → MCU</li>
+          <li><a href="/work/deployment/">Deployment Workflow</a> — YOLO → ONNX → NPU</li>
+          <li><a href="/work/optimization/">Optimization</a> — NEON, memory, latency/FPS metrics</li>
+          <li><a href="/work/rtos/">RTOS / Real-time Control</a> — event logic & MCU alerts</li>
+        </ul>
+      </div>
 
-<div class="metric">
-Cosine similarity acceleration: <span class="highlight">+22%</span>
-</div>
+      <div class="card">
+        <div class="h2">Notes / Playbook</div>
+        <ul class="list">
+          <li><a href="/notes/playbook/">Engineering Playbook</a> — debugging, profiling, release checklist.</li>
+        </ul>
+        <div class="cn">這頁是「統整能力」的證據：規格、流程、檢查表，最像 Tech Lead。</div>
+      </div>
 
-<div class="metric">
-RetinaFace decode optimization: <span class="highlight">+43%</span>
-</div>
+      <div class="card">
+        <div class="h2">Projects</div>
+        <ul class="list">
+          <li><a href="/projects/">Personal Projects</a> — templates ready, content coming soon.</li>
+        </ul>
+      </div>
+    </div>
 
-<p style="margin-top:20px;">
-Optimized using ARM NEON SIMD intrinsics and memory-level tuning
-for real-time embedded deployment.
-</p>
-</div>
+    <div class="footer">© <span id="y"></span> SkeletonLin · Built with GitHub Pages</div>
+  </div>
 
-<div class="section">
-<h2>Research & Advanced AI Background</h2>
-<p>
-Published research at ARVO (International Ophthalmology Conference),
-developed Semi-Supervised Cross-Modality Mean Teacher framework
-for medical image segmentation.
-</p>
-</div>
-
-<div class="section">
-<h2>Contact</h2>
-GitHub: <a href="https://github.com/skeletonlin" target="_blank">github.com/skeletonlin</a><br>
-Email: your_email@example.com
-</div>
-
-</div>
+  <script src="/assets/site.js"></script>
 </body>
 </html>
