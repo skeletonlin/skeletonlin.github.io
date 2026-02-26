@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Work | System Pipeline</title>
+  <link rel="stylesheet" href="/assets/style.css"/>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <div class="brand">Work <span class="badge">Pipeline</span></div>
+    <div class="nav">
+      <a href="/" data-path="/">Home</a>
+      <a href="/research/pcv/" data-path="/research/">Research</a>
+      <a href="/work/pipeline/" data-path="/work/">Work</a>
+      <a href="/notes/playbook/" data-path="/notes/">Notes</a>
+      <a href="/projects/" data-path="/projects/">Projects</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="h2">End-to-end Embedded AI Pipeline</div>
+    <div class="small">Camera → ISP → NPU → OSD → Alert → MCU</div>
+    <div class="cn">完整鏈路：影像輸入 → ISP → NPU 推論 → OSD 呈現 → 警示策略 → MCU 控制蜂鳴器/LED。</div>
+
+    <div class="hr"></div>
+
+    <div class="h2">Architecture</div>
+    <ul class="list">
+      <li>Input: camera capture and buffer strategy</li>
+      <li>ISP: key configurations that affect NPU accuracy</li>
+      <li>NPU: model loading, input/output tensors</li>
+      <li>OSD: overlay boxes/text/status</li>
+      <li>Alert: state machine and debouncing</li>
+      <li>MCU: IO control contract (buzzer/LED)</li>
+    </ul>
+
+    <div class="hr"></div>
+
+    <div class="h2">Design Decisions</div>
+    <ul class="list">
+      <li>Latency budget & where time goes</li>
+      <li>Memory layout & zero-copy considerations</li>
+      <li>Failure modes & safe fallback</li>
+    </ul>
+  </div>
+
+  <div class="footer">© <span id="y"></span> SkeletonLin</div>
+</div>
+<script src="/assets/site.js"></script>
+</body>
+</html>
