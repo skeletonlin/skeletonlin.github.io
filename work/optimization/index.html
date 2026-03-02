@@ -34,22 +34,50 @@
 
     <div class="hr"></div>
 
-    <div class="h2">How I measure</div>
-    <ul class="list">
-      <li>Metric: latency (ms), FPS, CPU utilization</li>
-      <li>Method: fixed input set, warm-up, N runs, report mean/p95</li>
-      <li>Validation: output equivalence check (numerical tolerance)</li>
-    </ul>
-
+    <div class="h2">Case Study: YOLO NMS Acceleration (+63%)</div>
+    <div class="small">
+    <b>Problem.</b> In a real-time AI camera pipeline, CPU usage hit <b>~100%</b> during post-processing (NMS),
+    becoming the throughput bottleneck.
+    </div>
+    <div class="cn">問題：在 AI 攝影機即時 pipeline 中，後處理（NMS）導致 CPU 逼近 100%，成為效能瓶頸。</div>
+    
     <div class="hr"></div>
-
-    <div class="h2">Optimization patterns</div>
+    
+    <div class="h2">Hypothesis</div>
     <ul class="list">
-      <li>Vectorization (NEON intrinsics), loop unrolling, cache-friendly layout</li>
-      <li>Memory: reduce copies, align buffers, pre-allocate</li>
-      <li>Algorithmic: early exit, pruning, thresholding strategies</li>
+      <li>Vectorize compute-heavy parts of NMS using <b>ARM NEON SIMD</b> to reduce CPU cycles.</li>
+      <li>Improve memory access patterns to reduce cache misses and redundant loads.</li>
     </ul>
-  </div>
+    <div class="cn">假設：用 ARM NEON 向量化 NMS 熱點計算、並調整記憶體存取以降低 CPU cycles。</div>
+    
+    <div class="hr"></div>
+    
+    <div class="h2">Approach</div>
+    <ul class="list">
+      <li>Identify hotspots by observing sustained CPU saturation during inference runtime.</li>
+      <li>Rewrite key loops with NEON intrinsics and reduce unnecessary memory copies.</li>
+      <li>Keep output behavior consistent with baseline implementation.</li>
+    </ul>
+    <div class="cn">作法：定位熱點 → NEON intrinsics 重寫核心迴圈 → 減少 copy → 確保輸出行為與 baseline 一致。</div>
+    
+    <div class="hr"></div>
+    
+    <div class="h2">Validation</div>
+    <ul class="list">
+      <li><b>Primary metric:</b> steady-state FPS improvement under fixed input set.</li>
+      <li><b>Regression check:</b> side-by-side visual comparison of overlay output against baseline.</li>
+      <li><b>Result:</b> post-processing speed improved by <b>+63%</b> (YOLO NMS).</li>
+    </ul>
+    <div class="cn">驗證：固定輸入集測 FPS，並以可視化輸出比對做回歸檢查；YOLO NMS 提升 +63%。</div>
+    
+    <div class="hr"></div>
+    
+    <div class="h2">What I would improve next</div>
+    <ul class="list">
+      <li>Add end-to-end latency measurement (mean / p95) and per-stage timing breakdown.</li>
+      <li>Add numeric tolerance checks for intermediate tensors to complement visual regression.</li>
+    </ul>
+    <div class="cn">下一步：補上 end-to-end latency（mean/p95）與分段 profiling；加入數值誤差檢查強化驗證。</div>
 
   <div class="footer">© <span id="y"></span> SkeletonLin</div>
 </div>
