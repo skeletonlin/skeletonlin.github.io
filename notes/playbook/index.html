@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Notes | Engineering Playbook</title>
+  <link rel="stylesheet" href="/assets/style.css"/>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <div class="brand">Notes <span class="badge">Playbook</span></div>
+    <div class="nav">
+      <a href="/" data-path="/">Home</a>
+      <a href="/research/pcv/" data-path="/research/">Research</a>
+      <a href="/work/pipeline/" data-path="/work/">Work</a>
+      <a href="/notes/playbook/" data-path="/notes/">Notes</a>
+      <a href="/projects/" data-path="/projects/">Projects</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="h2">Engineering Playbook (WIP)</div>
+    <div class="small">
+      A reusable checklist for debugging, profiling, deployment, and release. This page reflects my approach to systematizing engineering work.
+    </div>
+    <div class="cn">可複用的檢查表：debug / profiling / deployment / release（這頁是統整能力的證據）。</div>
+
+    <div class="hr"></div>
+
+    <div class="h2">1) When performance drops</div>
+    <ul class="list">
+      <li>Confirm baseline: input resolution, model version, config version.</li>
+      <li>Observe CPU usage & identify saturated stage (e.g., post-process).</li>
+      <li>Measure steady-state FPS; plan to add latency (mean/p95).</li>
+      <li>Change one variable at a time; keep notes of before/after.</li>
+    </ul>
+
+    <div class="hr"></div>
+
+    <div class="h2">2) Deployment checklist</div>
+    <ul class="list">
+      <li>Class mapping: confirm class count + label order.</li>
+      <li>Memory budget: pre-allocate buffers, reduce copies.</li>
+      <li>Sanity test: visual output check vs baseline.</li>
+      <li>Stability test: run sustained duration; monitor memory growth.</li>
+    </ul>
+    <div class="cn">你提過的兩大坑（class 不對、記憶體不足）已經被整理成 checklist。</div>
+
+    <div class="hr"></div>
+
+    <div class="h2">3) Regression strategy</div>
+    <ul class="list">
+      <li>Visual regression: overlay outputs side-by-side.</li>
+      <li>Functional regression: key scenarios must still trigger expected events.</li>
+      <li>Future: add numeric tolerance checks for intermediate tensors.</li>
+    </ul>
+
+    <div class="hr"></div>
+
+    <div class="h2">4) Release readiness (WIP)</div>
+    <ul class="list">
+      <li>Record versions: firmware / model / config hashes.</li>
+      <li>Document known limitations and safe fallback behavior.</li>
+      <li>Prepare quick rollback plan.</li>
+    </ul>
+  </div>
+
+  <div class="footer">© <span id="y"></span> SkeletonLin</div>
+</div>
+<script src="/assets/site.js"></script>
+</body>
+</html>
