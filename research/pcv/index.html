@@ -21,36 +21,54 @@
   <div class="card">
     <div class="h2">PCV Segmentation (ARVO)</div>
     <div class="small">
-      Focus: semi-supervised segmentation, cross-modality learning (FA + ICG).
+      Semi-supervised segmentation under limited labels; explored cross-modality consistency strategies.
     </div>
-    <div class="cn">重點：半監督分割、跨模態學習（FA + ICG）。</div>
+    <div class="cn">在標註有限下做半監督分割，並探索跨模態一致性策略。</div>
 
     <div class="hr"></div>
 
     <div class="h2">Problem</div>
-    <div class="small">What clinical/engineering problem you solve; what constraints exist.</div>
-
-    <div class="hr"></div>
-
-    <div class="h2">Method</div>
     <ul class="list">
-      <li>Baseline: Single-Modality Mean Teacher (SM-MT)</li>
-      <li>Enhancement: VAT for consistency regularization</li>
-      <li>Extension: Cross-Modality Mean Teacher (CM-MT)</li>
+      <li>Segmentation requires dense labels, but labeling is expensive.</li>
+      <li>Goal: improve segmentation performance with limited labeled data.</li>
     </ul>
+    <div class="cn">痛點：分割標註成本高；目標：在少標註下提升表現。</div>
 
     <div class="hr"></div>
 
-    <div class="h2">Results</div>
-    <div class="small">Add metrics/plots later. Keep it concise and reproducible.</div>
-
-    <div class="hr"></div>
-
-    <div class="h2">Key Takeaways</div>
+    <div class="h2">Method (What I built)</div>
     <ul class="list">
-      <li>What worked and why.</li>
-      <li>What failed and what you learned.</li>
-      <li>How you’d productize or extend this.</li>
+      <li><b>Mean Teacher framework</b>: student/teacher consistency on unlabeled data</li>
+      <li><b>VAT</b>: strengthen consistency with adversarial perturbations</li>
+      <li><b>Cross-modality idea</b> (if applicable): enforce consistency across modalities</li>
+    </ul>
+    <div class="cn">方法：Mean Teacher + VAT 強化一致性；並探索跨模態一致性（若有）。</div>
+
+    <div class="hr"></div>
+
+    <div class="h2">Experiment Design (Decision-making)</div>
+    <ul class="list">
+      <li>Define labeled/unlabeled split and training protocol.</li>
+      <li>Ablation: baseline vs +VAT vs cross-modality (where applicable).</li>
+      <li>Focus on reproducibility: fixed seeds / fixed split / consistent metrics.</li>
+    </ul>
+    <div class="cn">這段是判斷力證據：你怎麼設計實驗、怎麼做 ablation、怎麼確保可重現。</div>
+
+    <div class="hr"></div>
+
+    <div class="h2">Results (WIP)</div>
+    <div class="small">
+      Add your key metric table/plot here. Keep it concise: baseline vs improvements.
+    </div>
+    <div class="cn">之後補：用表格呈現 baseline 與方法提升（不要堆文字）。</div>
+
+    <div class="hr"></div>
+
+    <div class="h2">Takeaways</div>
+    <ul class="list">
+      <li>What worked and why (hypothesis confirmed).</li>
+      <li>What didn’t work and what you learned.</li>
+      <li>How you’d improve it next (data, loss, architecture, evaluation).</li>
     </ul>
   </div>
 
