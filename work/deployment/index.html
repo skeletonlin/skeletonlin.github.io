@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Work | Deployment Workflow</title>
+  <link rel="stylesheet" href="/assets/style.css"/>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <div class="brand">Work <span class="badge">Deployment</span></div>
+    <div class="nav">
+      <a href="/" data-path="/">Home</a>
+      <a href="/research/pcv/" data-path="/research/">Research</a>
+      <a href="/work/pipeline/" data-path="/work/">Work</a>
+      <a href="/notes/playbook/" data-path="/notes/">Notes</a>
+      <a href="/projects/" data-path="/projects/">Projects</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="h2">Deployment Workflow (YOLO → ONNX → NPU)</div>
+    <div class="small">
+      A reproducible workflow for bringing models into embedded deployment with clear configuration alignment.
+    </div>
+    <div class="cn">可重現的部署流程：把模型帶到嵌入式端，並確保設定一致與可維護。</div>
+
+    <div class="hr"></div>
+
+    <div class="h2">Workflow Overview</div>
+    <ul class="list">
+      <li>Export model → <b>ONNX</b></li>
+      <li>Validate ONNX I/O shapes & output semantics</li>
+      <li>Integrate into NPU toolchain / SDK</li>
+      <li>Align post-processing parameters (NMS / thresholds / label map)</li>
+      <li>Run end-to-end sanity test (visual + basic metrics)</li>
+    </ul>
+
+    <div class="hr"></div>
+
+    <div class="h2">Common Pitfalls & Checklist</div>
+    <div class="small"><b>1) Class mismatch</b></div>
+    <ul class="list">
+      <li>Confirm model output channels match expected class count.</li>
+      <li>Verify label ordering & mapping (class id ↔ label).</li>
+      <li>Align SDK configuration with the exported model (anchors / strides / decode parameters if applicable).</li>
+    </ul>
+    <div class="cn">class 數不對：確認輸出維度、label mapping、SDK 參數（decode/NMS）一致。</div>
+
+    <div class="small" style="margin-top:12px;"><b>2) Memory limitation</b></div>
+    <ul class="list">
+      <li>Pre-allocate buffers and avoid repeated malloc/free in runtime.</li>
+      <li>Reduce intermediate copies (prefer zero-copy / shared buffers when possible).</li>
+      <li>Adjust input resolution if memory budget is tight.</li>
+    </ul>
+    <div class="cn">記憶體不足：預先配置 buffer、減少 copy、必要時調整解析度。</div>
+
+    <div class="hr"></div>
+
+    <div class="h2">Validation (Minimum)</div>
+    <ul class="list">
+      <li>Visual sanity check: boxes / labels / confidence look reasonable.</li>
+      <li>Stability: run for sustained duration and monitor CPU/memory.</li>
+      <li>Regression: compare against a baseline build when available.</li>
+    </ul>
+
+    <div class="hr"></div>
+
+    <div class="h2">Next (WIP)</div>
+    <ul class="list">
+      <li>Add a versioned deployment checklist (model hash, config hash).</li>
+      <li>Add automated shape checks and CI gate (future improvement).</li>
+    </ul>
+  </div>
+
+  <div class="footer">© <span id="y"></span> SkeletonLin</div>
+</div>
+<script src="/assets/site.js"></script>
+</body>
+</html>
