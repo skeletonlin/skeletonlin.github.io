@@ -3081,8 +3081,8 @@ input, select, textarea {
 	}
 
 		#header .logo img {
-			width: 140px;
-			height: 140px;
+			width: 280px;
+			height: 280px;
 			border-radius: 50%;
 			object-fit: cover;
 		}
