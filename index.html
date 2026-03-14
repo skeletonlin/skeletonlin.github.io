@@ -23,11 +23,12 @@
 						<h1>凌中謙</h1>
 						<p>
 						電腦視覺 / 嵌入式AI / AI應用<br/>
-						Computer Vision & Embedded AI Engineer
+						Computer Vision & Embedded AI Engineer<br/>
+						Taipei, Taiwan
 						</p>
 						<ul class="icons">
-							<li><a href="mailto:allen880928@gmail.com" class="icon fa-envelope alt"><span class="label">Email</span></a></li>
-							<li><a href="https://github.com/skeletonlin" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
+							<li><a href="mailto:allen880928@gmail.com" class="icon fa-envelope alt" target="_blank"><span class="label">Email</span></a></li>
+							<li><a href="https://github.com/skeletonlin" class="icon brands fa-github alt" target="_blank"><span class="label">GitHub</span></a></li>
 						</ul>
 					</header>
 
@@ -46,34 +47,38 @@
 
 						<!-- 關於我 -->
 							<section id="intro" class="main">
-								<div class="spotlight">
-									<div class="content">
-										<header class="major">
-											<h2>關於我</h2>
-										</header>
-										<p>目前從事電腦視覺與嵌入式 AI 相關開發，具備醫學影像分析、影像分類與分割、模型部署及系統整合經驗。工作上主要負責影像辨識模型在實際設備上的應用。研究方面，曾以第一作者發表醫學影像相關期刊論文。此外，也持續透過個人專案探索 AI 安全與 LLM 應用等方向。</p>
-									</div>
-									<span class="image"><img src="images/allen_image.jpg" alt="" /></span>
-								</div>
+								<header class="major">
+									<h2>關於我</h2>
+								</header>
+								<p>目前從事電腦視覺與嵌入式 AI 相關開發，具備醫學影像分析、影像分類與分割、模型部署及系統整合經驗。工作上主要負責影像辨識模型在實際設備上的應用。</p>
+								<p>研究方面曾以第一作者發表醫學影像相關期刊論文。此外也透過個人專案持續探索 AI 安全與 LLM 應用等方向。</p>
 								<div class="content">
 									<header class="major">
 										<h2>技術能力</h2>
 									</header>
 									<div class="row">
-										<div class="col-6 col-12-medium">
+										<div class="col-4 col-12-medium">
 											<h3>程式語言 &amp; 工具</h3>
 											<ul>
 												<li>Python、C/C++</li>
 												<li>PyTorch、OpenCV</li>
-												<li>Docker、Git、Linux</li>
+												<li>Docker、Git</li>
 											</ul>
 										</div>
-										<div class="col-6 col-12-medium">
+										<div class="col-4 col-12-medium">
 											<h3>AI / Computer Vision</h3>
 											<ul>
-												<li>影像分類、物件偵測</li>
-												<li>影像分割、醫學影像分析</li>
-												<li>Deep Learning、Model Deployment</li>
+												<li>Image Classification、Object Detection</li>
+												<li>Image Segmentation、Medical Image Analysis</li>
+												<li>Deep Learning、Semi-supervised Learning</li>
+											</ul>
+										</div>
+										<div class="col-4 col-12-medium">
+											<h3>系統整合與部署</h3>
+											<ul>
+												<li>Model Deployment、Embedded AI</li>
+												<li>Edge AI、MCU / RTOS</li>
+												<li>ISP Tuning</li>
 											</ul>
 										</div>
 									</div>
@@ -86,8 +91,15 @@
 									<h2>工作經驗</h2>
 								</header>
 								<h3>昇銳智慧科技｜嵌入式 AI 演算法工程師｜2025/04 - 至今</h3>
-								<p>負責嵌入式 AI 影像辨識系統全端開發，涵蓋模型訓練、邊緣設備部署到 MCU 端整合。主要應用於駕駛監控系統（Driver Monitoring System），工作內容包含影像辨識模型訓練與部署至邊緣設備、ISP 影像處理環境建置與調校、MCU 控制功能開發如 OSD 顯示與蜂鳴器警示等推論結果回饋機制，以及嵌入式 AI 系統整合與測試。</p>
-								<p><strong>使用技術：</strong>Computer Vision、Deep Learning、Embedded AI、Novatek、RTOS</p>
+								<p>負責嵌入式 AI 影像辨識系統開發，主要應用於駕駛監控系統（Driver Monitoring System）。</p>
+								<p>主要工作內容：</p>
+								<ul>
+									<li>影像辨識模型訓練與部署至邊緣設備</li>
+									<li>ISP 影像處理環境建置與調校</li>
+									<li>MCU 控制功能開發（OSD 顯示、蜂鳴器警示）</li>
+									<li>嵌入式 AI 系統整合與測試</li>
+								</ul>
+								<p><strong>使用技術：</strong>Computer Vision / Deep Learning / Embedded AI / Novatek / RTOS</p>
 							</section>
 
 						<!-- 專案 -->
@@ -96,8 +108,28 @@
 									<h2>專案</h2>
 								</header>
 								<h3>AI-Security-Lab</h3>
-								<p>以 Django 搭配 Temporal 工作流引擎建立網頁應用，透過 Ollama 在本地端運行大型語言模型，實現不依賴外部 API 的 LLM 聊天機器人。專案主要用於學習 AI 安全議題，內容包含整合本地端 LLM 聊天功能、設計 AI 安全相關挑戰與練習環境，以及透過實作理解 Prompt Injection 與 LLM 防禦概念。此專案也參考實際發生的 LLM 服務濫用案例，進一步理解 LLM 安全防護的重要性。</p>
-								<p><strong>使用技術：</strong>Django、Temporal、Ollama</p>
+								<p>以 Django 搭配 Temporal 工作流引擎建立 LLM 網頁應用，並透過 Ollama 在本地端部署大型語言模型，實作不依賴外部 API 的聊天機器人系統。</p>
+								<p>專案內容包含：</p>
+								<ul>
+									<li>建立本地端 LLM 聊天介面與後端流程控制</li>
+									<li>設計 AI 安全相關挑戰頁面與互動機制</li>
+									<li>模擬 Prompt Injection 與模型濫用情境</li>
+									<li>驗證 LLM 系統在應用場景中的防護需求</li>
+								</ul>
+								<p><strong>使用技術：</strong>Django / Temporal / Ollama</p>
+
+								<hr />
+
+								<h3>醫學影像研究開發</h3>
+								<p>以醫學影像病灶定位與分割為主題，建立資料前處理、模型訓練與實驗驗證流程，並針對標註資料有限情境，探索半監督式深度學習方法。</p>
+								<p>專案內容包含：</p>
+								<ul>
+									<li>醫學影像資料整理與前處理</li>
+									<li>分割模型訓練與效能比較</li>
+									<li>標註 / 未標註資料的半監督式訓練設計</li>
+									<li>病灶區域定位結果驗證與分析</li>
+								</ul>
+								<p><strong>使用技術：</strong>PyTorch / Deep Learning / Image Segmentation / Semi-supervised Learning / Medical Image Analysis</p>
 							</section>
 
 						<!-- 期刊研究 -->
@@ -106,9 +138,9 @@
 									<h2>期刊研究</h2>
 								</header>
 								<h3>Localization of Polypoidal Choroidal Vasculopathy in Fluorescein Angiography using Semi-supervised Deep Learning with Labeled and Unlabeled Images</h3>
-								<p><strong>第一作者</strong>｜<a href="https://pubmed.ncbi.nlm.nih.gov/41085351/">PubMed</a></p>
+								<p><strong>第一作者</strong>｜PubMed Indexed Journal｜<a href="https://pubmed.ncbi.nlm.nih.gov/41085351/" target="_blank">PubMed</a></p>
 								<p>針對多足息肉樣脈絡膜血管病變（PCV），提出基於半監督式深度學習的螢光血管攝影定位方法，利用標註與未標註影像提升模型表現。</p>
-								<span class="image fit"><img src="images/SiameseTeacher.png" alt="SiameseTeacher 模型架構圖" /></span>
+								<span class="image" style="max-width: 560px; display: block; margin: 1em auto;"><img src="images/SiameseTeacher.png" alt="SiameseTeacher 模型架構圖" /></span>
 								<p><strong>使用技術：</strong>Deep Learning、Image Segmentation、Semi-supervised Learning、醫療影像</p>
 							</section>
 
@@ -120,9 +152,9 @@
 							<h2>聯絡資訊</h2>
 							<dl class="alt">
 								<dt>Email</dt>
-								<dd><a href="mailto:allen880928@gmail.com">allen880928@gmail.com</a></dd>
+								<dd><a href="mailto:allen880928@gmail.com" target="_blank">allen880928@gmail.com</a></dd>
 								<dt>GitHub</dt>
-								<dd><a href="https://github.com/skeletonlin">github.com/skeletonlin</a></dd>
+								<dd><a href="https://github.com/skeletonlin" target="_blank">github.com/skeletonlin</a></dd>
 							</dl>
 						</section>
 						<p class="copyright">&copy; 凌中謙. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
